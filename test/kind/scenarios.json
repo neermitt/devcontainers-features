@@ -1,9 +1,10 @@
 {
-    "all_the_clis": {
+    "kind_version": {
         "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
         "features": {
-            "helmfile": {},
-            "kind": {}
+            "kind": {
+                "version": "0.14.0"
+            }
         }
     }
 }

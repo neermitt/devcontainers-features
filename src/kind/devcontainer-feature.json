@@ -1,0 +1,27 @@
+{
+    "id": "kind",
+    "version": "1.0.0",
+    "name": "Kind",
+    "description": "Installs latest version of kind (Kubernetes In Docker). Auto-detects latest versions and installs needed dependencies.",
+    "options": {
+        "version": {
+            "type": "string",
+            "proposals": [
+                "latest",
+                "none",
+                "v0.15.0"
+            ],
+            "default": "latest",
+            "description": "Select or enter a kind version to install"
+        },
+        "kind_sha256": {
+            "type": "string",
+            "proposals": [
+                "automatic",
+                "dev-mode"
+            ],
+            "default": "automatic",
+            "description": "Select or enter a kind version SHA256 to check"
+        }
+    }
+}
