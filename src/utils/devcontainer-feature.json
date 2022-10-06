@@ -1,0 +1,27 @@
+{
+    "id": "utils",
+    "version": "1.0.0",
+    "name": "YQ",
+    "description": "Installs latest version of yq. Auto-detects latest versions and installs needed dependencies.",
+    "options": {
+        "yq_version": {
+            "type": "string",
+            "proposals": [
+                "latest",
+                "none",
+                "4.28.1"
+            ],
+            "default": "latest",
+            "description": "Select or enter a yq version to install"
+        },
+        "yq_sha256": {
+            "type": "string",
+            "proposals": [
+                "automatic",
+                "dev-mode"
+            ],
+            "default": "automatic",
+            "description": "Select or enter a yq version SHA256 to check"
+        }
+    }
+}

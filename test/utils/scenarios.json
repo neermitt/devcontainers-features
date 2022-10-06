@@ -1,10 +1,10 @@
 {
-    "all_the_clis": {
+    "all_cli_versions": {
         "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
         "features": {
-            "helmfile": {},
-            "kind": {},
-            "utils": {}
+            "utils": {
+                "yq_version": "4.27.5"
+            }
         }
     }
 }
