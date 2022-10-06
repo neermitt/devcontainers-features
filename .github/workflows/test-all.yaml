@@ -12,6 +12,7 @@ jobs:
     strategy:
       matrix:
         features: [
+           "helmfile",
         ]
         baseImage: [
           "ubuntu:focal",
@@ -36,6 +37,7 @@ jobs:
     strategy:
       matrix:
         features: [
+          "helmfile"
         ]
     steps:
       - uses: actions/checkout@v2
