@@ -5,7 +5,7 @@ on:
       features:
         description: "List of features to execute tests against"
         required: true
-        default: "go dotnet"
+        default: "helmfile"
       baseImage:
         description: "Base image"
         required: true

@@ -1,0 +1,8 @@
+{
+    "all_the_clis": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "helmfile": {}
+        }
+    }
+}

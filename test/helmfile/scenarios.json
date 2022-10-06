@@ -1,0 +1,10 @@
+{
+    "helmfile_version": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "helmfile": {
+                "version": "0.145.0"
+            }
+        }
+    }
+}

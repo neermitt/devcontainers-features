@@ -12,6 +12,7 @@ jobs:
         id: filter
         with:
           filters: |
+            helmfile: ./**/helmfile/**
             
   test:
     needs: [detect-changes]
