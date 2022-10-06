@@ -13,6 +13,7 @@ jobs:
         with:
           filters: |
             helmfile: ./**/helmfile/**
+            kind: ./**/kind/**
             
   test:
     needs: [detect-changes]
