@@ -123,6 +123,8 @@ fi
 
 if ! type helm > /dev/null 2>&1; then
     echo -e '\n(*) Warning: The helm command was not found.\n\nYou can use one of the following scripts to install it:\n\nhttps://github.com/microsoft/vscode-dev-containers/blob/main/script-library/docs/kubectl-helm.md'
+else
+    helm plugin install https://github.com/databus23/helm-diff 
 fi
 
 echo -e "\nDone!"
