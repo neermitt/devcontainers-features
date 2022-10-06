@@ -13,6 +13,15 @@
             ],
             "default": "latest",
             "description": "Select or enter a kind version to install"
+        },
+        "kind_sha256": {
+            "type": "string",
+            "proposals": [
+                "automatic",
+                "dev-mode"
+            ],
+            "default": "automatic",
+            "description": "Select or enter a kind version SHA256 to check"
         }
     }
 }
