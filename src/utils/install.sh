@@ -4,9 +4,9 @@
 
 set -e
 
-KIND_VERSION="${VERSION:-"latest"}"
+YQ_VERSION="${YQ_VERSION:-"latest"}"
 
-KIND_SHA256="${KIND_SHA256:-"automatic"}"
+YQ_SHA256="${YQ_SHA256:-"automatic"}"
 USERNAME=${USERNAME:-"automatic"}
 
 if [ "$(id -u)" -ne 0 ]; then
@@ -98,30 +98,27 @@ architecture="$(uname -m)"
 case $architecture in
     x86_64) architecture="amd64";;
     aarch64 | armv8*) architecture="arm64";;
+    i?86) architecture="386";;
     *) echo "(!) Architecture $architecture unsupported"; exit 1 ;;
 esac
 
 
-# Install Kind, verify signature and checksum
-echo "Downloading Kind..."
-find_version_from_git_tags KIND_VERSION "https://github.com/kubernetes-sigs/kind"
+# Install YQ, verify signature and checksum
+echo "Downloading yq..."
+find_version_from_git_tags YQ_VERSION "https://github.com/mikefarah/yq"
 
-mkdir -p /tmp/kind
-kind_filename="kind-linux-${architecture}"
-tmp_kind_filename="/tmp/kind/${kind_filename}"
-curl -sSL "https://github.com/kubernetes-sigs/kind/releases/download/v${KIND_VERSION}/${kind_filename}" -o "${tmp_kind_filename}"
+mkdir -p /tmp/yq
+yq_filename="yq_linux_${architecture}"
+tmp_yq_filename="/tmp/yq/${yq_filename}"
+curl -sSL "https://github.com/mikefarah/yq/releases/download/v${YQ_VERSION}/${yq_filename}" -o "${tmp_yq_filename}"
 
-mv -f "${tmp_kind_filename}" /usr/local/bin/kind
-chmod 0755 /usr/local/bin/kind
-rm -rf /tmp/kind
+mv -f "${tmp_yq_filename}" /usr/local/bin/yq
+chmod 0755 /usr/local/bin/yq
+rm -rf /tmp/yq
 
-if [ "$KIND_SHA256" = "automatic" ]; then
-    KIND_SHA256="$(curl -sSL "https://github.com/kubernetes-sigs/kind/releases/download/v${KIND_VERSION}/${kind_filename}.sha256sum")"
-fi
-([ "${KIND_SHA256}" = "dev-mode" ] || (echo "${KIND_SHA256::64} */usr/local/bin/kind" | sha256sum -c -))
 
-if ! type kind > /dev/null 2>&1; then
-    echo '(!) Kind installation failed!'
+if ! type yq > /dev/null 2>&1; then
+    echo '(!) yq installation failed!'
     exit 1
 fi
 
