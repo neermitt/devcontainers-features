@@ -1,8 +1,10 @@
 {
-    "all_the_clis": {
+    "helmfile_version": {
         "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
         "features": {
-            "helmfile": {}
+            "helmfile": {
+                "version": "0.145.0"
+            }
         }
     }
 }
