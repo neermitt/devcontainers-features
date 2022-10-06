@@ -114,6 +114,20 @@ curl -sSL "https://github.com/mikefarah/yq/releases/download/v${YQ_VERSION}/${yq
 
 mv -f "${tmp_yq_filename}" /usr/local/bin/yq
 chmod 0755 /usr/local/bin/yq
+
+
+if [ "$YQ_SHA256" = "automatic" ]; then
+    curl -sSL "https://github.com/mikefarah/yq/releases/download/v${YQ_VERSION}/checksums" -o /tmp/yq/checksums
+    curl -sSL "https://github.com/mikefarah/yq/releases/download/v${YQ_VERSION}/checksums_hashes_order" -o /tmp/yq/checksums_hashes_order
+    curl -sSL "https://github.com/mikefarah/yq/releases/download/v${YQ_VERSION}/extract-checksum.sh" -o /tmp/yq/extract-checksum.sh
+
+    chmod 0755 /tmp/yq/extract-checksum.sh
+
+    YQ_SHA256="$(cd /tmp/yq && /tmp/yq/extract-checksum.sh SHA-256 "${yq_filename}" | awk '{print $2}' )"
+fi
+([ "${YQ_SHA256}" = "dev-mode" ] || (echo "${YQ_SHA256} */usr/local/bin/yq" | sha256sum -c -))
+
+
 rm -rf /tmp/yq
 
 
