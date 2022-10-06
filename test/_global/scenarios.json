@@ -1,0 +1,13 @@
+{
+    "all_the_clis": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {
+                "version": "1.25",
+                "helm": "3.9.4",
+                "minikube": "none"
+            },
+            "helmfile": {}
+        }
+    }
+}
