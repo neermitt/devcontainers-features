@@ -1,0 +1,10 @@
+{
+    "all_cli_versions": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "opsos": {
+                "version": "0.1.1"
+            }
+        }
+    }
+}
