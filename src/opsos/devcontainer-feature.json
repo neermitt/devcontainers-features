@@ -1,0 +1,27 @@
+{
+    "id": "opsos",
+    "version": "1.0.0",
+    "name": "OPS OS",
+    "description": "Installs latest version of opsos. Auto-detects latest versions and installs needed dependencies.",
+    "options": {
+        "version": {
+            "type": "string",
+            "proposals": [
+                "latest",
+                "none",
+                "0.1.1"
+            ],
+            "default": "latest",
+            "description": "Select or enter a opsos version to install"
+        },
+        "opsos_sha256": {
+            "type": "string",
+            "proposals": [
+                "automatic",
+                "dev-mode"
+            ],
+            "default": "automatic",
+            "description": "Select or enter a opsos version SHA256 to check"
+        }
+    }
+}
