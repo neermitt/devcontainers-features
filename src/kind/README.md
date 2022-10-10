@@ -7,9 +7,9 @@ Installs latest version of kind (Kubernetes In Docker). Auto-detects latest vers
 
 ```json
 "features": {
-        "ghcr.io/neermitt/devcontainers-features/kind:1": {
-            "version": "latest"
-        }
+    "ghcr.io/neermitt/devcontainers-features/kind:1": {
+        "version": "latest"
+    }
 }
 ```
 

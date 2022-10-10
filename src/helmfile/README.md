@@ -7,9 +7,9 @@ Installs latest version of helmfile. Auto-detects latest versions and installs n
 
 ```json
 "features": {
-        "ghcr.io/neermitt/devcontainers-features/helmfile:1": {
-            "version": "latest"
-        }
+    "ghcr.io/neermitt/devcontainers-features/helmfile:1": {
+        "version": "latest"
+    }
 }
 ```
 
