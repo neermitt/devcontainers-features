@@ -2,7 +2,7 @@
     "all_cli_versions": {
         "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
         "features": {
-            "utils": {
+            "build-tools": {
                 "gomplate_version": "3.11.3"
             }
         }
