@@ -1,27 +1,27 @@
 {
-    "id": "build-tools",
+    "id": "gomplate",
     "version": "1.0.0",
-    "name": "build-tools",
-    "description": "install latest version of build tools",
+    "name": "gomplate",
+    "description": "install latest version of gomplate",
     "options": {
-        "gomplate": {
+        "version": {
             "type": "string",
             "proposals": [
                 "latest",
                 "none",
-                "4.28.1"
+                "3.11.3"
             ],
             "default": "latest",
-            "description": "Select or enter a yq version to install"
+            "description": "Select or enter a gomplate version to install"
         },
-        "yq_sha256": {
+        "sha256": {
             "type": "string",
             "proposals": [
                 "automatic",
                 "dev-mode"
             ],
             "default": "automatic",
-            "description": "Select or enter a yq version SHA256 to check"
+            "description": "Select or enter a gomplate version SHA256 to check"
         }
     }
 }

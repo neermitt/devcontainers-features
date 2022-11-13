@@ -16,7 +16,7 @@ jobs:
             kind: ./**/kind/**
             opsos: ./**/opsos/**
             utils: ./**/utils/**
-            build-tools: ./**/build-tools/**
+            gomplate: ./**/gomplate/**
             
   test:
     needs: [detect-changes]

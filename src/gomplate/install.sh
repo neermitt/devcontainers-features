@@ -4,8 +4,8 @@
 
 set -e
 
-GOMPLATE_VERSION="${GOMPLATE_VERSION:-"latest"}"
-GOMPLATE_SHA256="${GOMPLATE_SHA256:-"automatic"}"
+GOMPLATE_VERSION="${VERSION:-"latest"}"
+GOMPLATE_SHA256="${SHA256:-"automatic"}"
 
 USERNAME=${USERNAME:-"automatic"}
 

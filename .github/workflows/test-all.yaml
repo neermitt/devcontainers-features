@@ -16,7 +16,7 @@ jobs:
            "kind",
            "opsos",
            "utils",
-           "build-tools"
+           "gomplate"
         ]
         baseImage: [
           "ubuntu:focal",
@@ -45,7 +45,7 @@ jobs:
           "kind",
           "opsos",
           "utils",
-          "build-tools"
+          "gomplate"
         ]
     steps:
       - uses: actions/checkout@v3

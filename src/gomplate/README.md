@@ -7,7 +7,7 @@ Installs latest version of gomplate. Auto-detects latest versions and installs n
 
 ```json
 "features": {
-    "ghcr.io/neermitt/devcontainers-features/build-tools:1": {
+    "ghcr.io/neermitt/devcontainers-features/gomplate:1": {
         "version": "latest"
     }
 }
@@ -17,8 +17,8 @@ Installs latest version of gomplate. Auto-detects latest versions and installs n
 
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
-| gomplate_version | Select or enter a gomplate version to install | string | latest |
-| gomplate_sha256 | Select or enter a gomplate version SHA256 to check | string | automatic |
+| version | Select or enter a gomplate version to install | string | latest |
+| sha256 | Select or enter a gomplate version SHA256 to check | string | automatic |
 
 
 
