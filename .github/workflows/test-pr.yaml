@@ -13,6 +13,7 @@ jobs:
         run: echo "filter=$(ls ./src/ | jq -R -s -c 'split("\n")[:-1] | map( { (.|tostring):("./**/" + . + "/**") }) | add')" >> $GITHUB_OUTPUT
  
   detect-changes:
+    needs: [list-filter]
     runs-on: ubuntu-latest
     outputs:
       features: ${{ steps.filter.outputs.changes }}
