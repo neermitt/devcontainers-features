@@ -3,14 +3,14 @@ on:
   pull_request:
 
 jobs:
-  list-features:
+  list-filter:
     runs-on: ubuntu-latest
     outputs:
-      matrix: ${{ steps.set-matrix.outputs.matrix }}
+      filter: ${{ steps.set-filter.outputs.filter }}
     steps:
-      - uses: actions/checkout@v2
-      - id: set-matrix
-        run: echo "::set-output name=matrix::$(ls ./src/ | jq -R -s -c 'split("\n")[:-1] | map(. + ":./**/" + . + "/**" ) | join("\n")')"
+      - uses: actions/checkout@v3
+      - id: set-filter
+        run: echo "filter=$(ls ./src/ | jq -R -s -c 'split("\n")[:-1] | map(. + ":./**/" + . + "/**" ) | join("\n")')" >> $GITHUB_OUTPUT
  
   detect-changes:
     runs-on: ubuntu-latest
@@ -20,7 +20,8 @@ jobs:
       - uses: dorny/paths-filter@v2
         id: filter
         with:
-          filters: ${{ needs.list-features.outputs.matrix }}
+          filters: |- 
+            ${{ needs.list-filter.outputs.filter }}
             
   test:
     needs: [detect-changes]
