@@ -15,7 +15,8 @@ jobs:
            "helmfile",
            "kind",
            "opsos",
-           "utils"
+           "utils",
+           "build-tools"
         ]
         baseImage: [
           "ubuntu:focal",
@@ -25,7 +26,7 @@ jobs:
           "mcr.microsoft.com/devcontainers/base:debian",
         ]
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: "Install latest devcontainer CLI"
         run: npm install -g @devcontainers/cli
@@ -43,10 +44,11 @@ jobs:
           "helmfile",
           "kind",
           "opsos",
-          "utils"
+          "utils",
+          "build-tools"
         ]
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: "Install latest devcontainer CLI"
         run: npm install -g @devcontainers/cli
@@ -58,7 +60,7 @@ jobs:
     runs-on: ubuntu-latest
     continue-on-error: true
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: "Install latest devcontainer CLI"
         run: npm install -g @devcontainers/cli
