@@ -101,13 +101,11 @@ esac
 
 # Check and install component
 install_from_git_release() {
-    local component = $1
-    local version_variable_name = $2
-    local sha256_variable_name = $3
-    local github_repo = $4
+    local component=$1
+    local version_variable_name=$2
+    local sha256_variable_name=$3
+    local github_repo=$4
 
-    local requested_version=${!version_variable_name}
-    local requested_sha256=${!sha256_variable_name}
     local component_filename="${component}_linux-${architecture}"
     local tmp_component_filename="/tmp/${component}/${component_filename}"
 
@@ -116,11 +114,13 @@ install_from_git_release() {
     find_version_from_git_tags ${version_variable_name} "https://github.com/${github_repo}"
 
     mkdir -p /tmp/${component}
+    local requested_version=${!version_variable_name}
     curl -sSL "https://github.com/${github_repo}/releases/download/v${requested_version}/${component_filename}" -o "${tmp_component_filename}"
 
-    mv -f "${component_filename}" /usr/local/bin/${component}
-    chmod 0755 /usr/local/bin/${component_filename}
+    mv -f "${tmp_component_filename}" /usr/local/bin/${component}
+    chmod 0755 /usr/local/bin/${component}
 
+    local requested_sha256=${!sha256_variable_name}
     if [ "$requested_sha256" = "automatic" ]; then
         curl -sSL "https://github.com/${github_repo}/releases/download/v${requested_version}/checksums-v${requested_version}_sha256.txt" -o /tmp/${component}/checksums
 
