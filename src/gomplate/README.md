@@ -1,7 +1,7 @@
 
-# GOMPLATE
+# gomplate (gomplate)
 
-Installs latest version of gomplate. Auto-detects latest versions and installs needed dependencies.
+install latest version of gomplate
 
 ## Example Usage
 
@@ -24,4 +24,4 @@ Installs latest version of gomplate. Auto-detects latest versions and installs n
 
 ---
 
-_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/neermitt/devcontainers-features/blob/main/src/build-tools/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/neermitt/devcontainers-features/blob/main/src/gomplate/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
