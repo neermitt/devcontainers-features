@@ -1,0 +1,27 @@
+{
+    "id": "gomplate",
+    "version": "1.0.0",
+    "name": "gomplate",
+    "description": "install latest version of gomplate",
+    "options": {
+        "version": {
+            "type": "string",
+            "proposals": [
+                "latest",
+                "none",
+                "3.11.3"
+            ],
+            "default": "latest",
+            "description": "Select or enter a gomplate version to install"
+        },
+        "sha256": {
+            "type": "string",
+            "proposals": [
+                "automatic",
+                "dev-mode"
+            ],
+            "default": "automatic",
+            "description": "Select or enter a gomplate version SHA256 to check"
+        }
+    }
+}
