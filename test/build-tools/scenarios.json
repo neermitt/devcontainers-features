@@ -1,0 +1,10 @@
+{
+    "all_cli_versions": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "utils": {
+                "gomplate_version": "3.11.3"
+            }
+        }
+    }
+}
