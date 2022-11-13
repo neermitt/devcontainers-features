@@ -3,6 +3,15 @@ on:
   pull_request:
 
 jobs:
+  list-features:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v2
+      - id: set-matrix
+        run: echo "::set-output name=matrix::$(ls ./src/ | jq -R -s -c 'split("\n")[:-1] | map(. + ":./**/" + . + "/**" ) | join("\n")')"
+ 
   detect-changes:
     runs-on: ubuntu-latest
     outputs:
@@ -11,12 +20,7 @@ jobs:
       - uses: dorny/paths-filter@v2
         id: filter
         with:
-          filters: |
-            helmfile: ./**/helmfile/**
-            kind: ./**/kind/**
-            opsos: ./**/opsos/**
-            utils: ./**/utils/**
-            gomplate: ./**/gomplate/**
+          filters: ${{ needs.list-features.outputs.matrix }}
             
   test:
     needs: [detect-changes]
