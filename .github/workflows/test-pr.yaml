@@ -36,7 +36,7 @@ jobs:
     needs: [list-images]
     runs-on: ubuntu-latest
     steps:
-      - run: echo ${{ fromJSON(needs.list-images.outputs.matrix) }}
+      - run: echo ${{ needs.list-images.outputs.matrix }}
            
   test:
     needs: [detect-changes, list-images]
@@ -45,7 +45,8 @@ jobs:
     strategy:
       matrix:
         features: ${{ fromJSON(needs.detect-changes.outputs.features) }}
-        baseImage: ${{ needs.list-images.outputs.matrix }}
+        baseImage:
+          - ubuntu:focal
     steps:
       - uses: actions/checkout@v3
 
