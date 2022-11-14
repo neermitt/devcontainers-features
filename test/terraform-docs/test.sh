@@ -6,10 +6,6 @@ set -e
 source dev-container-features-test-lib
 
 # Definition specific tests
-check "check for helmfile" helmfile --version
-check "check for kind" kind --version
-check "check for yq" yq --version
-check "check for gomplate" gomplate --version
 check "check for terraform-docs" terraform-docs --version
 
 # Report result

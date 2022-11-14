@@ -5,7 +5,8 @@
             "helmfile": {},
             "kind": {},
             "utils": {},
-            "gomplate": {}
+            "gomplate": {},
+            "terraform-docs": {}
         }
     }
 }
