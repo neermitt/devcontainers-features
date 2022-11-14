@@ -36,7 +36,7 @@ jobs:
     needs: [list-images]
     runs-on: ubuntu-latest
     steps:
-      - run: echo needs.list-images.outputs.matrix[0]
+      - run: echo ${{ needs.list-images.outputs.matrix[0] }}
            
   test:
     needs: [detect-changes, list-images]
