@@ -102,7 +102,6 @@ case $architecture in
 esac
 
 
-
 # Check and install component
 install_from_git_release() {
     local component=$1
