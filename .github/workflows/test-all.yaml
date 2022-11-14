@@ -9,11 +9,12 @@ jobs:
   list-features:
     runs-on: ubuntu-latest
     outputs:
-      matrix: ${{ steps.set-matrix.outputs.matrix }}
+      features: ${{ steps.set-matrix.outputs.matrix }}
     steps:
       - uses: actions/checkout@v3
       - id: set-matrix
-        run: echo "matrix=$(jq -R  -c 'split("\n")[:-1]')" >> $GITHUB_OUTPUT
+        run: echo "matrix=$(ls src/ | jq -R -s -c 'split("\n")[:-1]')" >> $GITHUB_OUTPUT
+
   list-images:
     runs-on: ubuntu-latest
     outputs:
@@ -22,14 +23,15 @@ jobs:
       - uses: actions/checkout@v3
       - id: set-matrix
         run: echo "matrix=$(jq -c '.' ./.github/baseImages.json)" >> $GITHUB_OUTPUT
+
   test:
     needs: [list-features, list-images]
     runs-on: ubuntu-latest
     continue-on-error: true
     strategy:
       matrix:
-        features: ${{ fromJson(needs.list-features.outputs.matrix) }}
-        baseImage: ${{ needs.list-images.outputs.matrix }}
+        features: ${{ fromJSON(needs.list-features.outputs.features) }}
+        baseImage: ${{ fromJson(needs.list-images.outputs.matrix) }}
     steps:
       - uses: actions/checkout@v3
 
@@ -46,7 +48,7 @@ jobs:
     continue-on-error: true
     strategy:
       matrix:
-        features: ${{ fromJson(needs.list-features.outputs.matrix) }}
+        features: ${{ fromJSON(needs.list-features.outputs.features) }}
     steps:
       - uses: actions/checkout@v3
 

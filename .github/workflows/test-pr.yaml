@@ -39,7 +39,7 @@ jobs:
     strategy:
       matrix:
         features: ${{ fromJSON(needs.detect-changes.outputs.features) }}
-        baseImage: ${{ needs.list-images.outputs.matrix }}
+        baseImage: ${{ fromJson(needs.list-images.outputs.matrix) }}
     steps:
       - uses: actions/checkout@v3
 
