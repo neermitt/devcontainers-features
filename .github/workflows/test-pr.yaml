@@ -44,7 +44,8 @@ jobs:
     continue-on-error: true
     strategy:
       matrix:
-        features: ${{ fromJSON(needs.detect-changes.outputs.features) }}
+        features:
+          - gomplate
         baseImage:
           - ubuntu:focal
     steps:
