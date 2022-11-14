@@ -1,0 +1,21 @@
+{
+    "id": "pre-commit",
+    "version": "1.0.0",
+    "name": "pre-commit",
+    "description": "install latest version of pre-commit",
+    "installAfter": [
+        "ghcr.io/devcontainers/features/python:latest"
+    ],
+    "options": {
+        "version": {
+            "type": "string",
+            "proposals": [
+                "latest",
+                "none",
+                "2.20.0"
+            ],
+            "default": "latest",
+            "description": "Select or enter a pre-commit version to install"
+        },
+    }
+}

@@ -6,7 +6,8 @@
             "kind": {},
             "utils": {},
             "gomplate": {},
-            "terraform-docs": {}
+            "terraform-docs": {},
+            "pre-commit": {}
         }
     }
 }
