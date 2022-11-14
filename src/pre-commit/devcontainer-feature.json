@@ -16,6 +16,6 @@
             ],
             "default": "latest",
             "description": "Select or enter a pre-commit version to install"
-        },
+        }
     }
 }
