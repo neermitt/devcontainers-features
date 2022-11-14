@@ -28,7 +28,7 @@ jobs:
     continue-on-error: true
     strategy:
       matrix:
-        features: ${{ fromJson(needs.list-features.outputs.matrix) }}
+        features: ${{ needs.list-features.outputs.matrix }}
         baseImage: ${{ needs.list-images.outputs.matrix }}
     steps:
       - uses: actions/checkout@v3
@@ -46,7 +46,7 @@ jobs:
     continue-on-error: true
     strategy:
       matrix:
-        features: ${{ fromJson(needs.list-features.outputs.matrix) }}
+        features: ${{ needs.list-features.outputs.matrix }}
     steps:
       - uses: actions/checkout@v3
 

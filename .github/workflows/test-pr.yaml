@@ -31,6 +31,12 @@ jobs:
         id: filter
         with:
           filters: ${{ needs.list-filter.outputs.filter }}
+
+  debug:
+    needs: [list-images]
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo ${{needs.list-images.outputs.matrix}}
            
   test:
     needs: [detect-changes, list-images]
