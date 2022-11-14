@@ -31,12 +31,6 @@ jobs:
         id: filter
         with:
           filters: ${{ needs.list-filter.outputs.filter }}
-
-  debug:
-    needs: [list-images]
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo ${{ needs.list-images.outputs.matrix }}
            
   test:
     needs: [detect-changes, list-images]
@@ -44,8 +38,7 @@ jobs:
     continue-on-error: true
     strategy:
       matrix:
-        features:
-          - gomplate
+        features: ${{ needs.detect-changes.outputs.features }}
         baseImage: ${{ fromJson(needs.list-images.outputs.matrix) }}
     steps:
       - uses: actions/checkout@v3
