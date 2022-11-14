@@ -1,0 +1,10 @@
+{
+    "all_cli_versions": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "terraform-docs": {
+                "version": "0.16.0"
+            }
+        }
+    }
+}
