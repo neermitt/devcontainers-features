@@ -46,7 +46,7 @@ jobs:
       matrix:
         features:
           - gomplate
-        baseImage: ${{ needs.list-images.outputs.matrix }}
+        baseImage: ${{ fromJson(needs.list-images.outputs.matrix) }}
     steps:
       - uses: actions/checkout@v3
 
