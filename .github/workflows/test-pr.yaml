@@ -46,8 +46,7 @@ jobs:
       matrix:
         features:
           - gomplate
-        baseImage:
-          - ubuntu:focal
+        baseImage: ${{ needs.list-images.outputs.matrix }}
     steps:
       - uses: actions/checkout@v3
 
