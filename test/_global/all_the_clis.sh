@@ -11,6 +11,7 @@ check "check for kind" kind --version
 check "check for yq" yq --version
 check "check for gomplate" gomplate --version
 check "check for terraform-docs" terraform-docs --version
+check "check for pre-commit" pre-commit --version
 
 # Report result
 reportResults
