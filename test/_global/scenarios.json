@@ -5,7 +5,7 @@
             "helmfile": {},
             "kind": {},
             "utils": {},
-            "build-tools": {}
+            "gomplate": {}
         }
     }
 }

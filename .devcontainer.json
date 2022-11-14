@@ -3,12 +3,22 @@
     "customizations": {
         "vscode": {
             "extensions": [
-                "mads-hartmann.bash-ide-vscode"
-            ]
+                "eamodio.gitlens",
+                "cschleiden.vscode-github-actions",
+                "mads-hartmann.bash-ide-vscode",
+                "ms-vscode.makefile-tools"
+            ],
+            "settings": {
+                "files.associations": {
+                    "Makefile.*": "makefile"
+                }
+            }
         }
     },
     "features": {
-        "ghcr.io/devcontainers/features/docker-in-docker:1": {}
+        "ghcr.io/stuartleeks/dev-container-features/shell-history:0": {},
+        "ghcr.io/devcontainers/features/docker-in-docker:1": {},
+        "ghcr.io/neermitt/devcontainers-features/gomplate:1": {}
     },
     "postCreateCommand": "npm install -g @devcontainers/cli"
 }
