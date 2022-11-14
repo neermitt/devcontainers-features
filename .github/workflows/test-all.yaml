@@ -13,21 +13,23 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - id: set-matrix
-        run: echo "matrix=$(ls src/ | jq -R -s -c 'split("\n")[:-1]')" >> $GITHUB_OUTPUT
+        run: echo "matrix=$(jq -R  -c 'split("\n")[:-1]')" >> $GITHUB_OUTPUT
+  list-images:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v3
+      - id: set-matrix
+        run: echo "matrix=$(jq -c '.' ./.github/baseImages.json)" >> $GITHUB_OUTPUT
   test:
-    needs: [list-features]
+    needs: [list-features, list-images]
     runs-on: ubuntu-latest
     continue-on-error: true
     strategy:
       matrix:
         features: ${{ fromJson(needs.list-features.outputs.matrix) }}
-        baseImage: [
-          "ubuntu:focal",
-          "ubuntu:jammy",
-          "debian:11",
-          "mcr.microsoft.com/devcontainers/base:ubuntu",
-          "mcr.microsoft.com/devcontainers/base:debian",
-        ]
+        baseImage: ${{ needs.list-images.outputs.matrix }}
     steps:
       - uses: actions/checkout@v3
 

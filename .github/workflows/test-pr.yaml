@@ -11,7 +11,16 @@ jobs:
       - uses: actions/checkout@v3
       - id: set-filter
         run: echo "filter=$(ls ./src/ | jq -R -s -c 'split("\n")[:-1] | map( { (.|tostring):("./**/" + . + "/**") }) | add')" >> $GITHUB_OUTPUT
- 
+
+  list-images:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v3
+      - id: set-matrix
+        run: echo "matrix=$(jq -c '.' ./.github/baseImages.json)" >> $GITHUB_OUTPUT
+
   detect-changes:
     needs: [list-filter]
     runs-on: ubuntu-latest
@@ -22,22 +31,15 @@ jobs:
         id: filter
         with:
           filters: ${{ needs.list-filter.outputs.filter }}
-            
+           
   test:
-    needs: [detect-changes]
+    needs: [detect-changes, list-images]
     runs-on: ubuntu-latest
     continue-on-error: true
     strategy:
       matrix:
         features: ${{ fromJSON(needs.detect-changes.outputs.features) }}
-        baseImage:
-          [
-            "ubuntu:focal",
-            "ubuntu:jammy",
-            "debian:11",
-            "mcr.microsoft.com/devcontainers/base:ubuntu",
-            "mcr.microsoft.com/devcontainers/base:debian",
-          ]
+        baseImage: ${{ needs.list-images.outputs.matrix }}
     steps:
       - uses: actions/checkout@v3
 
