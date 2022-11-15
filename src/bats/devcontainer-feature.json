@@ -1,0 +1,18 @@
+{
+    "id": "bats",
+    "version": "1.0.0",
+    "name": "bats",
+    "description": "install latest version of bats from https://bats-core.readthedocs.io/",
+    "options": {
+        "version": {
+            "type": "string",
+            "proposals": [
+                "latest",
+                "none",
+                "1.8.2"
+            ],
+            "default": "latest",
+            "description": "Select or enter a bats-core version to install"
+        }
+    }
+}

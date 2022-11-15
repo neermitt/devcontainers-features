@@ -1,0 +1,10 @@
+{
+    "all_cli_versions": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "bats": {
+                "version": "1.8.2"
+            }
+        }
+    }
+}
