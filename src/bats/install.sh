@@ -114,7 +114,7 @@ install_from_git() {
     
     rm -rf /tmp/${component}
 
-    if ! type ${component} > /dev/null 2>&1; then
+    if ! type bats > /dev/null 2>&1; then
         echo "(!) ${component} installation failed!"
         exit 1
     fi
