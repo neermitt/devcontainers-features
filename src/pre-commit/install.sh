@@ -43,7 +43,7 @@ find_version_from_git_tags() {
     local repository=$2
     local prefix=${3:-"tags/v"}
     local separator=${4:-"."}
-    local last_part_optional=${5:-"false"}    
+    local last_part_optional=${5:-"false"}
     if [ "$(echo "${requested_version}" | grep -o "." | wc -l)" != "2" ]; then
         local escaped_separator=${separator//./\\.}
         local last_part
@@ -96,7 +96,7 @@ fi
 
 if ! type pip3 > /dev/null 2>&1; then
     echo "Installing python3..."
-    export VERSION="system" 
+    export VERSION="system"
     export INSTALLTOOLS="false"
     curl -fsSL https://raw.githubusercontent.com/devcontainers/features/main/src/python/install.sh | $SHELL
 fi
@@ -121,7 +121,7 @@ install_using_pip() {
     find_version_from_git_tags ${version_variable_name} "https://github.com/${github_repo}"
 
     local requested_version=${!version_variable_name}
-    
+
     pip3 install ${component}==${requested_version}
 
     if ! type ${component} > /dev/null 2>&1; then

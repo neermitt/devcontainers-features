@@ -43,7 +43,7 @@ find_version_from_git_tags() {
     local repository=$2
     local prefix=${3:-"tags/v"}
     local separator=${4:-"."}
-    local last_part_optional=${5:-"false"}    
+    local last_part_optional=${5:-"false"}
     if [ "$(echo "${requested_version}" | grep -o "." | wc -l)" != "2" ]; then
         local escaped_separator=${separator//./\\.}
         local last_part
@@ -124,7 +124,7 @@ fi
 if ! type helm > /dev/null 2>&1; then
     echo -e '\n(*) Warning: The helm command was not found.\n\nYou can use one of the following scripts to install it:\n\nhttps://github.com/microsoft/vscode-dev-containers/blob/main/script-library/docs/kubectl-helm.md'
 else
-    helm plugin install https://github.com/databus23/helm-diff 
+    helm plugin install https://github.com/databus23/helm-diff
 fi
 
 echo -e "\nDone!"

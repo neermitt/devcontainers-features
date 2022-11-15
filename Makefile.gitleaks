@@ -1,0 +1,5 @@
+GITLEAKS ?= gitleaks
+
+## Scan current repository
+gitleaks/scan:
+	@$(GITLEAKS) protect --source=$(CURDIR) --verbose --redact --staged

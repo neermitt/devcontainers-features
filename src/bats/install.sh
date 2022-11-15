@@ -43,7 +43,7 @@ find_version_from_git_tags() {
     local repository=$2
     local prefix=${3:-"tags/v"}
     local separator=${4:-"."}
-    local last_part_optional=${5:-"false"}    
+    local last_part_optional=${5:-"false"}
     if [ "$(echo "${requested_version}" | grep -o "." | wc -l)" != "2" ]; then
         local escaped_separator=${separator//./\\.}
         local last_part
@@ -104,7 +104,7 @@ install_from_git() {
     find_version_from_git_tags ${version_variable_name} "https://github.com/${github_repo}"
 
     local requested_version=${!version_variable_name}
-    
+
 
     mkdir -p /tmp/${component}
     git clone --depth 1 --branch v${requested_version} https://github.com/${github_repo} /tmp/${component}
@@ -112,7 +112,7 @@ install_from_git() {
 
     /tmp/${component}/install.sh /usr/local
 
-    
+
     rm -rf /tmp/${component}
 
     if ! type bats > /dev/null 2>&1; then

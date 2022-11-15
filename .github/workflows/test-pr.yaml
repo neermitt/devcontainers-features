@@ -31,7 +31,7 @@ jobs:
         id: filter
         with:
           filters: ${{ needs.list-filter.outputs.filter }}
-           
+
   test:
     needs: [detect-changes, list-images]
     runs-on: ubuntu-latest
