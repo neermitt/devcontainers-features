@@ -86,6 +86,7 @@ check_packages() {
 export DEBIAN_FRONTEND=noninteractive
 
 # Install dependencies
+check_packages ca-certificates
 if ! type git > /dev/null 2>&1; then
     apt_get_update
     apt-get -y install --no-install-recommends git
