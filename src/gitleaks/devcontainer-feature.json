@@ -1,0 +1,27 @@
+{
+    "id": "gitleaks",
+    "version": "1.0.0",
+    "name": "gitleaks",
+    "description": "install latest version of gitleaks",
+    "options": {
+        "version": {
+            "type": "string",
+            "proposals": [
+                "latest",
+                "none",
+                "8.15.0"
+            ],
+            "default": "latest",
+            "description": "Select or enter a gitleaks version to install"
+        },
+        "sha256": {
+            "type": "string",
+            "proposals": [
+                "automatic",
+                "dev-mode"
+            ],
+            "default": "automatic",
+            "description": "Select or enter a gitleaks version SHA256 to check"
+        }
+    }
+}
