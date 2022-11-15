@@ -146,6 +146,3 @@ install_from_git_release gitleaks GITLEAKS_VERSION GITLEAKS_SHA256 "zricethezav/
 
 
 echo -e "\nDone!"
-
-https://github.com/zricethezav/gitleaks/releases/download/v8.15.0/gitleaks_8.15.0_checksums.txt
-https://github.com/zricethezav/gitleaks/releases/download/v8.15.0/gitleaks_8.15.0_checksums.txt
