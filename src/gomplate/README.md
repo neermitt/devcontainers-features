@@ -7,9 +7,7 @@ install latest version of gomplate
 
 ```json
 "features": {
-    "ghcr.io/neermitt/devcontainers-features/gomplate:1": {
-        "version": "latest"
-    }
+    "ghcr.io/neermitt/devcontainers-features/gomplate:1": {}
 }
 ```
 

@@ -7,9 +7,7 @@ install latest version of terraform-docs
 
 ```json
 "features": {
-    "ghcr.io/neermitt/devcontainers-features/terraform-docs:1": {
-        "version": "latest"
-    }
+    "ghcr.io/neermitt/devcontainers-features/terraform-docs:1": {}
 }
 ```
 

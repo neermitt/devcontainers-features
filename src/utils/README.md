@@ -7,9 +7,7 @@ Installs latest version of yq. Auto-detects latest versions and installs needed 
 
 ```json
 "features": {
-    "ghcr.io/neermitt/devcontainers-features/utils:1": {
-        "version": "latest"
-    }
+    "ghcr.io/neermitt/devcontainers-features/utils:1": {}
 }
 ```
 
