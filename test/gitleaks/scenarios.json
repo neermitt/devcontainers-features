@@ -1,0 +1,10 @@
+{
+    "all_cli_versions": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "gitleaks": {
+                "version": "8.15.0"
+            }
+        }
+    }
+}
