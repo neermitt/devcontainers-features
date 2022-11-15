@@ -7,9 +7,7 @@ Installs latest version of opsos. Auto-detects latest versions and installs need
 
 ```json
 "features": {
-    "ghcr.io/neermitt/devcontainers-features/opsos:1": {
-        "version": "latest"
-    }
+    "ghcr.io/neermitt/devcontainers-features/opsos:1": {}
 }
 ```
 

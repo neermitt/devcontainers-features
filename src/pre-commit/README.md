@@ -7,9 +7,7 @@ install latest version of pre-commit
 
 ```json
 "features": {
-    "ghcr.io/neermitt/devcontainers-features/pre-commit:1": {
-        "version": "latest"
-    }
+    "ghcr.io/neermitt/devcontainers-features/pre-commit:1": {}
 }
 ```
 
