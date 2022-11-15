@@ -13,6 +13,7 @@ check "check for gomplate" gomplate --version
 check "check for terraform-docs" terraform-docs --version
 check "check for pre-commit" pre-commit --version
 check "check for gitleaks" pre-commit version
+check "check for bats" bats --version
 
 # Report result
 reportResults

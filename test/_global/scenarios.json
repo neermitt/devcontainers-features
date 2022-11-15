@@ -8,7 +8,8 @@
             "gomplate": {},
             "terraform-docs": {},
             "pre-commit": {},
-            "gitleaks": {}
+            "gitleaks": {},
+            "bats": {}
         }
     }
 }
