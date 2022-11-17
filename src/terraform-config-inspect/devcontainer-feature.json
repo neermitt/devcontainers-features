@@ -1,0 +1,25 @@
+
+
+{
+    "id": "terraform-config-inspect",
+    "version": "1.0.0",
+    "name": "terraform-config-inspect",
+    "description": "helper library for extracting high-level metadata about Terraform modules from their source code",
+    "options": {
+        "version": {
+            "type": "string",
+            "proposals": ["latest","none","0.1.0"],
+            "default": "latest",
+            "description": "Select or enter a terraform-config-inspect version to install"
+        },
+        "sha256": {
+            "type": "string",
+            "proposals": [
+                "automatic",
+                "dev-mode"
+            ],
+            "default": "automatic",
+            "description": "Select or enter a terraform-config-inspect version SHA256 to check"
+        }
+    }
+}

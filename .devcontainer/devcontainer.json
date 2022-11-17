@@ -1,5 +1,7 @@
 {
-    "image": "mcr.microsoft.com/vscode/devcontainers/javascript-node:0-18",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
     "customizations": {
         "vscode": {
             "extensions": [
@@ -18,14 +20,25 @@
         }
     },
     "features": {
+        "ghcr.io/devcontainers/features/common-utils:1":{},
         "ghcr.io/stuartleeks/dev-container-features/shell-history:0": {},
-        "ghcr.io/devcontainers/features/docker-in-docker:1": {},
+        "ghcr.io/devcontainers/features/docker-in-docker:1": {
+            "version": "20.10",
+            "dockerDashComposeVersion": "v2"
+        },
         "ghcr.io/devcontainers/features/go:1": {
             "version": "1.19"
         },
-        "ghcr.io/neermitt/devcontainers-features/gomplate:1": {},
-        "ghcr.io/neermitt/devcontainers-features/gitleaks:1": {},
-        "ghcr.io/neermitt/devcontainers-features/pre-commit:1": {}
-    },
-    "postCreateCommand": "npm install -g @devcontainers/cli"
+        "ghcr.io/neermitt/devcontainers-features/gitleaks:1": {
+            "version": "8.15.0"
+        },
+        "ghcr.io/neermitt/devcontainers-features/pre-commit:1": {
+            "version": "2.20.0"
+        },
+        "ghcr.io/neermitt/devcontainers-features/gomplate:1": {
+            "version": "3.11.3"
+        },
+        "ghcr.io/neermitt/devcontainers-features/utils:1": {
+        }
+    }
 }
