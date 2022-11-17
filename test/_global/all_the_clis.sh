@@ -12,7 +12,7 @@ check "check for yq" yq --version
 check "check for gomplate" gomplate --version
 check "check for terraform-docs" terraform-docs --version
 check "check for pre-commit" pre-commit --version
-check "check for gitleaks" pre-commit version
+check "check for gitleaks" gitleaks version
 check "check for bats" bats --version
 check "check for terraform-config-inspect" terraform-config-inspect --version
 
