@@ -1,0 +1,10 @@
+{
+    "all_cli_versions": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "{{ (datasource "component").name }}": {
+                "version": "{{ index (datasource "component").versions 0 }}"
+            }
+        }
+    }
+}

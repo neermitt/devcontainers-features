@@ -1,0 +1,25 @@
+
+
+{
+    "id": "{{ (datasource "component").name }}",
+    "version": "{{ (datasource "component").version }}",
+    "name": "{{ (datasource "component").name }}",
+    "description": "{{ (datasource "component").description }}",
+    "options": {
+        "version": {
+            "type": "string",
+            "proposals": {{ coll.Slice "latest" "none" | append (datasource "component").versions | flatten | data.ToJSON}},
+            "default": "latest",
+            "description": "Select or enter a {{ (datasource "component").name }} version to install"
+        },
+        "sha256": {
+            "type": "string",
+            "proposals": [
+                "automatic",
+                "dev-mode"
+            ],
+            "default": "automatic",
+            "description": "Select or enter a {{ (datasource "component").name }} version SHA256 to check"
+        }
+    }
+}

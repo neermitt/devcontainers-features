@@ -9,7 +9,8 @@
             "terraform-docs": {},
             "pre-commit": {},
             "gitleaks": {},
-            "bats": {}
+            "bats": {},
+            "terraform-config-inspect": {}
         }
     }
 }

@@ -1,0 +1,5 @@
+name: terraform-config-inspect
+version: 1.0.0
+description: helper library for extracting high-level metadata about Terraform modules from their source code
+versions: ["0.1.0"]
+github_repo: "neermitt/terraform-config-inspect"
